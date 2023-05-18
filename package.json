@@ -2,6 +2,9 @@
   "name": "agreeable-astronaut",
   "type": "module",
   "version": "0.0.1",
+  "browerslist": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
