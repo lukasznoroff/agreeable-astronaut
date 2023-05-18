@@ -1,0 +1,15 @@
+---
+import MainHead from '../layouts/MainHead.astro';
+import '../styles/global.css';
+
+const { title = 'LukasWebDeveloper', description = 'Portfolio' } = Astro.props;
+---
+
+<html lang='en'>
+  <MainHead {title} {description} />
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

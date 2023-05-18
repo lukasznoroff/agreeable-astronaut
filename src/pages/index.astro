@@ -1,15 +1,261 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title='Main Page'>
+  <section class='section'>
+    <div class='wrapper'>
+      <h1>Lukas Web Developer</h1>
+      <p>more on:</p>
+      <a href='https://www.kaminskiportfolio.com/' target='_blank'
+        >www.kaminskiportfolio.com</a
+      >
+    </div>
+    <div class='parent'>
+      <div class='linear'></div>
+      <div class='easeIn'></div>
+      <div class='easeOut'></div>
+      <div class='easeInOut'></div>
+      <div class='elastic'></div>
+      <div class='bounce'></div>
+      <div class='steps'></div>
+      <div class='back'></div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .section {
+    width: 100vw;
+    background-color: #131314;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #444b52;
+  }
+  .parent {
+    margin: 1rem;
+    padding: 1rem;
+    width: 100vw;
+  }
+
+  .parent div {
+    font-weight: 500;
+    padding: 0.25rem;
+    box-sizing: border-box;
+    background-color: #212529;
+    height: 80px;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .linear {
+    background-position: 0% 20%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .easeIn {
+    background-position: 0% 30%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .easeOut {
+    background-position: 0% 40%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .easeInOut {
+    background-position: 0% 50%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .elastic {
+    background-position: 0% 60%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bounce {
+    background-position: 0% 70%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .steps {
+    background-position: 0% 80%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .back {
+    background-position: 0% 90%;
+    background-image: url('../images/image01.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<script>
+  gsap.to('.linear', {
+    scaleX: 0,
+    x: 50,
+    duration: 6,
+    ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+    stagger: {
+      each: 0.1,
+      from: 'edges',
+    },
+  });
+  gsap.to('.easeIn', {
+    scaleX: 0,
+    x: 50,
+    duration: 6,
+    ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+    stagger: {
+      each: 0.1,
+      from: 'edges',
+    },
+  });
+  gsap.to('.easeOut', {
+    scaleX: 0,
+    x: -50,
+    duration: 6,
+    ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+    stagger: {
+      each: 0.1,
+      from: 'edges',
+    },
+  });
+  gsap.to('.easeInOut', {
+    scaleX: 0,
+    x: 50,
+    duration: 6,
+    ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+    stagger: {
+      each: 0.1,
+      from: 'edges',
+    },
+  });
+  gsap.to('.elastic', {
+    scaleX: 0,
+    x: -50,
+    duration: 5,
+    // ease: 'elastic(3, 1.8)',
+    ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+
+    stagger: {
+      each: 0.1,
+      from: 'edges',
+    },
+  });
+  gsap.to('.bounce', {
+    scaleX: 0,
+    x: -50,
+    duration: 6,
+    ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+    stagger: {
+      each: 0.1,
+      from: 'edges',
+    },
+  });
+  gsap.to(
+    '.steps',
+    {
+      scaleX: 0,
+      x: 50,
+      duration: 6,
+      ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+      stagger: {
+        each: 0.1,
+        from: 'edges',
+      },
+    }
+    // '-=6.6',
+  );
+  gsap.to('.back', {
+    scaleX: 0,
+    x: -50,
+    duration: 6,
+    ease: "rough({ template: power3.out, strength: 0.5, points: 150, taper: 'in', randomize: true, clamp: true})",
+    stagger: {
+      each: 0.1,
+      from: 'edges',
+    },
+  });
+</script>
+
+<!-- ---
+import MainLayout from '../layouts/MainLayout.astro';
+import { gsap } from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+---
+
+<MainLayout title='Main Page'>
+  <section class='section'>
+    <div class='container'>
+      <h1 class='title'>Main Page</h1>
+      <p class='subtitle'>This is the main page</p>
+    </div>
+    <div class='div1'></div>
+    <div class='div2'>
+      <div class='square'></div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .div1,
+  .div2 {
+    height: 100vh;
+  }
+
+  .div1 {
+    background-color: pink;
+  }
+  .div2 {
+    background-color: salmon;
+  }
+  .square {
+    width: 150px;
+    height: 150px;
+    background-color: fuchsia;
+  }
+  .square2 {
+    margin-top: 300px;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+  }
+</style>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('.square', {
+    x: 700,
+    duration: 3,
+    scrollTrigger: { trigger: '.square', start: 'top center', markers: true },
+  });
+</script> -->
